@@ -106,13 +106,13 @@ public class RICSconverter implements ActionListener {	//IMPLEMENT THE ActionLis
 		    if (upcString.length() == 13){      //don't truncate a UPC if it's 13 chars
                     
                     System.out.println("found a 13-character UPC: truncation ignored");
-                    myFileWriter.write("\r\n" + upcString + " 01");	
+                    myFileWriter.write("\r\n" + upcString + "   01");	
                     button.setText("Convert!");
                     button.setText("UPCs converted: " + lines);
                 }
                 
                 else{
-                    myFileWriter.write("\r\n" + upcString.substring(0,12) + " 01");	//top newline + truncate to 12 chars + tab + 01
+                    myFileWriter.write("\r\n" + upcString.substring(0,12) + "   01");	//top newline + truncate to 12 chars + tab + 01
                     button.setText("UPCs converted: " + lines);
                 }
                 
